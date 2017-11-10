@@ -14,7 +14,7 @@ default: &default
   # database: DEMO
 
   adapter: mysql2
-  host: localhost
+  host: db-master1
   port: 3306
   adapter: mysql2
   username: root
