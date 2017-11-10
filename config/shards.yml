@@ -3,12 +3,12 @@ octopus:
     - development
   development:
     shard_one:
-        adapter: oracle_enhanced
-        username: CPI
-        password: cpi12345!
-        host: 172.16.110.8
-        port: 1521
-        database: DEMO
+        # adapter: oracle_enhanced
+        # username: CPI
+        # password: cpi12345!
+        # host: 172.16.110.8
+        # port: 1521
+        # database: DEMO
 
     shard_two:
       adapter: mysql2
