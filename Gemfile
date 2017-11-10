@@ -61,3 +61,9 @@ gem 'bootstrap-sass', '~> 3.3.6'
 gem 'jquery-rails'
 
 gem 'simple_form'
+gem 'aws-sdk-rails'
+
+group :production do
+  gem 'unicorn'
+  gem 'mysql2'
+end
