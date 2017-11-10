@@ -1,0 +1,60 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Policy no:</strong>
+  <%= @policy_extension.policy_no %>
+</p>
+
+<p>
+  <strong>Endorsement no:</strong>
+  <%= @policy_extension.endorsement_no %>
+</p>
+
+<p>
+  <strong>Assured no:</strong>
+  <%= @policy_extension.assured_no %>
+</p>
+
+<p>
+  <strong>Intermediary no:</strong>
+  <%= @policy_extension.intermediary_no %>
+</p>
+
+<p>
+  <strong>Intermediary name:</strong>
+  <%= @policy_extension.intermediary_name %>
+</p>
+
+<p>
+  <strong>Effective date:</strong>
+  <%= @policy_extension.effective_date %>
+</p>
+
+<p>
+  <strong>Premium due:</strong>
+  <%= @policy_extension.premium_due %>
+</p>
+
+<p>
+  <strong>Credit term:</strong>
+  <%= @policy_extension.credit_term %>
+</p>
+
+<p>
+  <strong>Orig due date:</strong>
+  <%= @policy_extension.orig_due_date %>
+</p>
+
+<p>
+  <strong>Extension:</strong>
+  <%= @policy_extension.extension %>
+</p>
+
+<p>
+  <strong>New due date:</strong>
+  <%= @policy_extension.new_due_date %>
+</p>
+
+<%= link_to 'Edit', edit_policy_extension_path(@policy_extension) %> |
+<%= link_to 'Back', policy_extensions_path %>|
+<%= link_to 'Home', policies_path %>

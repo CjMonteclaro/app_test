@@ -1,0 +1,20 @@
+<%= simple_form_for(@policy_extension) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :policy_no, input_html: { value: @policy.no } %>
+    <%= f.input :endorsement_no, input_html: {value: @policy.endorsement_no} %>
+    <%= f.input :assured_no, input_html: {value: @policy.assured.id} %>
+    <%= f.input :intermediary_no, input_html: {value: @policy.intermediary&.intm_no} %>
+    <%= f.input :intermediary_name, input_html: {value: @policy.intermediary&.name} %>
+    <%= f.input :effective_date, as: :string, input_html:{ value: format_date(@policy.eff_date) } %>
+    <%= f.input :premium_due, input_html:{ value: @policy.prem_amt} %>
+    <%= f.input :credit_term, input_html:{ value: @policy.intermediary.credit_term} %>
+    <%= f.input :orig_due_date, as: :string, input_html:{ value: format_date(@policy.due_date) } %>
+    <%= f.input :extension %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

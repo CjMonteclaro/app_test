@@ -1,0 +1,47 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Policy Extensions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Policy no</th>
+      <th>Endorsement no</th>
+      <th>Assured no</th>
+      <th>Intermediary no</th>
+      <th>Intermediary name</th>
+      <th>Effective date</th>
+      <th>Premium due</th>
+      <th>Credit term</th>
+      <th>Orig due date</th>
+      <th>Extension</th>
+      <th>New due date</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @policy_extensions.each do |policy_extension| %>
+      <tr>
+        <td><%= policy_extension.policy_no %></td>
+        <td><%= policy_extension.endorsement_no %></td>
+        <td><%= policy_extension.assured_no %></td>
+        <td><%= policy_extension.intermediary_no %></td>
+        <td><%= policy_extension.intermediary_name %></td>
+        <td><%= policy_extension.effective_date %></td>
+        <td><%= policy_extension.premium_due %></td>
+        <td><%= policy_extension.credit_term %></td>
+        <td><%= policy_extension.orig_due_date %></td>
+        <td><%= policy_extension.extension %></td>
+        <td><%= policy_extension.new_due_date %></td>
+        <td><%= link_to 'Show', policy_extension %></td>
+        <td><%= link_to 'Edit', edit_policy_extension_path(policy_extension) %></td>
+        <td><%= link_to 'Destroy', policy_extension, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Policy Extension', new_policy_extension_path %>

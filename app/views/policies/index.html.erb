@@ -1,0 +1,81 @@
+<h1>Policies Due Today</h1>
+
+<table class="table">
+  <thead>
+    <%= content_tag :th, "Policy Details" %>
+    <%= content_tag :th, "Dates" %>
+    <%= content_tag :th, "Net Premium" %>
+    <%= content_tag :th, "Taxes" %>
+    <%= content_tag :th, "Gross Premium" %>
+    <%= content_tag :th, "Commission" %>
+    <%= content_tag :th, "Net Due" %>
+    <%= content_tag :th, "Due Date" %>
+  </thead>
+
+  <% @policies.each do |policy| %>
+    <tr>
+      <!-- Policy Details -->
+      <td class="col-md-4">
+        <%= content_tag :p, policy.no %>
+        <%= content_tag :p, "Endorsement: #{policy.endorsement_no}", class: 'small label label-primary' if policy.endorsement_no %>
+        <%= content_tag :h4, shorten(policy.assured.name, 25) %>
+        <%= content_tag :b, "Itermediary: #{policy.intermediary&.intm_no} | " %>
+        <%= content_tag :span, shorten(policy.intermediary&.name, 25) %>
+        <%= content_tag :p, "TSI: #{format_currency(policy.tsi_amt)}" %>
+      </td>
+
+      <!-- Dates -->
+      <td class="col-md-3">
+        <%= content_tag :b, "Inception: " %>
+        <%= content_tag :span, format_date(policy.incept_date) %><br>
+        <%= content_tag :b, "Expiry: " %>
+        <%= content_tag :span, format_date(policy.expiry_date) %><br>
+        <%= content_tag :b, "Effectivity: " %>
+        <%= content_tag :span, format_date(policy.eff_date) %>
+      </td>
+
+      <!-- Net Premium -->
+      <%= content_tag :td, format_currency(policy.prem_amt), class: 'text-right'%>
+
+      <!-- Taxes -->
+      <td>
+        <% policy.policy_taxes.where(iss_cd: policy.policy_invoice&.iss_cd).each do |tax| %>
+          <% if tax.amount > 0 || tax.amount < 0 %>
+            <%= content_tag :b, tax.type %>
+            <%= content_tag :span, format_currency(tax.amount) %><br>
+          <% end %>
+        <% end %>
+
+        <%= content_tag :b, "Total Taxes: " %>
+        <%# content_tag :span, format_currency(policy.policy_taxes.where(iss_cd: policy.policy_invoice&.iss_cd).collect(&:amount)).sum %><br>
+      </td>
+
+      <!-- Gross Premium -->
+      <%= content_tag :td, format_currency(policy.policy_invoice&.gross_premium), class: 'text-right' %>
+
+      <!-- Commission -->
+      <td>
+        <%= content_tag :b, "Gross: " %>
+        <%= content_tag :span, policy.commission_invoice&.gross_commission %><br>
+
+        <%= content_tag :b, "W/Tax: " %>
+        <%= content_tag :span, policy.commission_invoice&.w_tax %><br>
+
+        <p class="label-info">
+          <%= content_tag :b, "Net: " %>
+          <%= content_tag :span, policy.commission_invoice&.net_commission %>
+        </p>
+      </td>
+
+      <!-- Net Due -->
+      <%= content_tag :td, format_currency(policy.net_due), class: 'text-right' %>
+
+      <!-- Due Date -->
+      <%= content_tag :td, (format_date(policy.due_date) if policy.due_date) %>
+
+      <td class="col-md-3 text-center"><%= link_to 'Show', new_policy_extension_path(id: policy.policy_id)%></td>
+
+  </tr>
+  <% end %>
+
+</table>

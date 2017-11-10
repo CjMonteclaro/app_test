@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<%= simple_form_for @policy_due, url: policies_path do |f| %>
+
+    <%#= content_tag :p, "Policy No" %>
+      <%= f.input :policy_no, label: "Policy No:" , input_html: {value: @policy.no, disabled:true, :size => 70}  %><br>
+
+    <%#= content_tag :p, "Endorsement No" %>
+      <%= f.input :endorsement_no, label: "Endorsement No:", input_html: {value: @policy.endorsement_no, disabled:true, :size => 70} %><br>
+
+    <%#= content_tag :p, "Assured" %>
+      <%= f.input :assured_name, label: "Assured:", input_html: {value: @policy.assured.name, disabled:true, :size => 70} %><br>
+
+    <%#= content_tag :p, "Intermediary" %>
+      <%= f.input :intermediary_no, label: "Intermediary No:" , input_html: {value: @policy.intermediary&.intm_no, disabled:true} %><br>
+      <%= f.input :intermediary_name, label: "Intermediary Name:" , input_html: {value: @policy.intermediary&.name, disabled:true, :size => 70} %><br>
+
+    <%#= content_tag :p, "Sum Insured" %>
+      <%= f.input :tsi_amount, label: "Sum Insured" , input_html: {value:  @policy.tsi_amt, disabled:true} %><br>
+
+      <%#= content_tag :p, "Net Premium" %>
+      <%= f.input :net_prem, label: "Net Premium" , input_html: {value: @policy.prem_amt, disabled:true} %><br>
+
+    <%#= content_tag :p, "Inception Date" %>
+      <%= f.input :inception_date%><br>
+
+    <%#= content_tag :p, "Expiry Date" %>
+      <%= f.input :expiry_date, as: :date , value_method: @policy.expiry_date %><br>
+
+    <%#= content_tag :p, "Effectivity Date" %>
+      <%= f.input :effective_date, as: :date, label: "Effectivity Date" , value_method: @policy.eff_date %><br>
+
+
+      <%= f.input :orig_due_date, as: :date, label: "Due Date" , value_method: @policy.due_date %><br>
+
+      <%= f.input :extended_due_date, as: :date, label: "Extended Due Date" , value_method: @policy.extended_due_date %><br>
+
+<% end %>
+
+<%= link_to 'Create', policies_path(@policy_due) %> |
+<%= link_to 'Back', policies_path %>
