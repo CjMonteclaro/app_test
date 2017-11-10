@@ -49,8 +49,8 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 
-gem 'ruby-oci8'
-gem 'activerecord-oracle_enhanced-adapter'
+# gem 'ruby-oci8'
+# gem 'activerecord-oracle_enhanced-adapter'
 gem 'mysql2'
 
 gem 'ar-octopus'

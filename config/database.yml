@@ -5,13 +5,20 @@
 #   gem 'sqlite3'
 #
 default: &default
-  adapter: oracle_enhanced
-  username: CPI
-  password: cpi12345!
+  # adapter: oracle_enhanced
+  # username: CPI
+  # password: cpi12345!
+  # # host: 172.16.110.8
   # host: 172.16.110.8
-  host: 172.16.110.8
-  port: 1521
-  database: DEMO
+  # port: 1521
+  # database: DEMO
+  host: localhost
+  port: 3306
+  adapter: mysql2
+  username: root
+  password: Fortune
+  database: fgen
+
 
 development:
   <<: *default
@@ -22,6 +29,6 @@ development:
 #   <<: *default
 #   database: db/test.sqlite3
 #
-# production:
-#   <<: *default
+production:
+  <<: *default
 #   database: db/production.sqlite3
