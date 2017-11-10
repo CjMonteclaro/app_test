@@ -12,6 +12,8 @@ default: &default
   # host: 172.16.110.8
   # port: 1521
   # database: DEMO
+
+  adapter: mysql2
   host: localhost
   port: 3306
   adapter: mysql2
