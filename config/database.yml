@@ -13,12 +13,11 @@ default: &default
   # port: 1521
   # database: DEMO
 
-  adapter: mysql2
-  host: db-master1
+  host: localhost
   port: 3306
   adapter: mysql2
-  username: root
-  password: Fortune
+  username: fgen
+  password: fortunegeneral
   database: fgen
 
 
