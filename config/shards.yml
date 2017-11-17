@@ -1,38 +1,38 @@
-octopus:
-  environments:
-    - development
-    - production
-
-  development:
-    # shard_one:
-    #     adapter: oracle_enhanced
-    #     username: CPI
-    #     password: cpi12345!
-    #     host: 172.16.110.8
-    #     port: 1521
-    #     database: DEMO
-
-    shard_two:
-      host: localhost
-      port: 3306
-      adapter: mysql2
-      username: fgen
-      password: fortunegeneral
-      database: fgen
-
-  production:
-    # shard_one:
-    #     adapter: oracle_enhanced
-    #     username: CPI
-    #     password: cpi12345!
-    #     host: 172.16.110.8
-    #     port: 1521
-    #     database: DEMO
-
-    shard_two:
-      host: localhost
-      port: 3306
-      adapter: mysql2
-      username: fgen
-      password: fortunegeneral
-      database: fgen
+# octopus:
+#   environments:
+#     - development
+#     - production
+#
+#   development:
+#     # shard_one:
+#     #     adapter: oracle_enhanced
+#     #     username: CPI
+#     #     password: cpi12345!
+#     #     host: 172.16.110.8
+#     #     port: 1521
+#     #     database: DEMO
+#
+#     shard_two:
+#       host: localhost
+#       port: 3306
+#       adapter: mysql2
+#       username: fgen
+#       password: fortunegeneral
+#       database: fgen
+#
+#   production:
+#     # shard_one:
+#     #     adapter: oracle_enhanced
+#     #     username: CPI
+#     #     password: cpi12345!
+#     #     host: 172.16.110.8
+#     #     port: 1521
+#     #     database: DEMO
+#
+#     shard_two:
+#       host: localhost
+#       port: 3306
+#       adapter: mysql2
+#       username: fgen
+#       password: fortunegeneral
+#       database: fgen

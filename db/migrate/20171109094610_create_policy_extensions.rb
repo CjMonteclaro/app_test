@@ -1,5 +1,5 @@
 class CreatePolicyExtensions < ActiveRecord::Migration[5.0]
-  using(:shard_two)
+  # using(:shard_two)
 
   def change
     create_table :policy_extensions do |t|

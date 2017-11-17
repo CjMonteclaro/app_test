@@ -53,7 +53,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 # gem 'activerecord-oracle_enhanced-adapter'
 gem 'mysql2'
 
-gem 'ar-octopus'
+# gem 'ar-octopus'
 # gem 'rails-sharding'
 
 
