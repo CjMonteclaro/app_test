@@ -20,7 +20,7 @@ octopus:
       password: fortunegeneral
       database: fgen
 
-  development:
+  production:
     # shard_one:
     #     adapter: oracle_enhanced
     #     username: CPI
