@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :policy_extensions
-  root 'policy_extensions/index'
+  root 'policy_extensions#index'
   get 'account_resolutions/new'
 
   get 'account_resolutions/create'

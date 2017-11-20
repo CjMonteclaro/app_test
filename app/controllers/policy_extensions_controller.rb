@@ -14,7 +14,7 @@ class PolicyExtensionsController < ApplicationController
 
   # GET /policy_extensions/new
   def new
-    @policy = Policy.find(params[:id])
+    # @policy = Policy.find(params[:id])
     @policy_extension = PolicyExtension.new
   end
 
